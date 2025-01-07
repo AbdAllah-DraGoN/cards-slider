@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test Page</title>
+    <title>Cards Slider</title>
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
@@ -14,8 +14,11 @@
         <button onclick="nextCard()">Next</button>
       </div>
     </div>
+    <!-------------------------------------------------->
+    <!-- SCRIPTS -->
+    <!-- Add Cards  -->
     <script>
-      const data = [
+      const imgList = [
         {
           img: "./imgs/asr.jpeg",
         },
@@ -47,7 +50,7 @@
           img: "./imgs/magreeb.jpeg",
         },
       ];
-      data.forEach((e, i) => {
+      imgList.forEach((e, i) => {
         document.querySelector(".cards").innerHTML += `
         <div class="card" id="${i + 1}">
           <img src="${e.img}" alt="" />
@@ -62,6 +65,7 @@
         `;
       });
     </script>
+    <!-- Slider Buttons Function  -->
     <script>
       const cards = document.querySelector(".cards");
       function nextCard() {
