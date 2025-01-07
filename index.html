@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Page</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="cards"></div>
+      <div class="scroll-btns">
+        <button onclick="prevCard()">prev</button>
+        <button onclick="nextCard()">Next</button>
+      </div>
+    </div>
+    <script>
+      const data = [
+        {
+          img: "./imgs/asr.jpeg",
+        },
+        {
+          img: "./imgs/dhuhr.jpeg",
+        },
+        {
+          img: "./imgs/fajr.jpeg",
+        },
+        {
+          img: "./imgs/isha.jpeg",
+        },
+        {
+          img: "./imgs/magreeb.jpeg",
+        },
+        {
+          img: "./imgs/asr.jpeg",
+        },
+        {
+          img: "./imgs/dhuhr.jpeg",
+        },
+        {
+          img: "./imgs/fajr.jpeg",
+        },
+        {
+          img: "./imgs/isha.jpeg",
+        },
+        {
+          img: "./imgs/magreeb.jpeg",
+        },
+      ];
+      data.forEach((e, i) => {
+        document.querySelector(".cards").innerHTML += `
+        <div class="card" id="${i + 1}">
+          <img src="${e.img}" alt="" />
+          <div class="info">
+            <h2>Title ${i + 1}</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+              natus ut impedit?
+            </p>
+          </div>
+        </div>
+        `;
+      });
+    </script>
+    <script>
+      const cards = document.querySelector(".cards");
+      function nextCard() {
+        // console.log("next");
+        cards.scrollBy({ left: 250, behavior: "smooth" });
+      }
+      function prevCard() {
+        // console.log("prev");
+        cards.scrollBy({ left: -250, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
